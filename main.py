@@ -5,10 +5,12 @@
 # Keep your token secure and store it safely, it can be used by anyone to control your bot.
 #
 # For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+import os
 import telebot
 import requests
 from bs4 import BeautifulSoup
-TOKEN = '5206778605:AAF1G-dYOWhNYVUhCHM8g9GpYVQp3yo2ePc'
+# TOKEN = '5206778605:AAF1G-dYOWhNYVUhCHM8g9GpYVQp3yo2ePc'
+TOKEN = os.environ.get('BOT_TOKEN')
 keys = telebot.types.ReplyKeyboardMarkup(True, True)
 keys.row('Курс USD', 'Курс EUR')
 keys.row('Курс UAH', 'Курс GBP')
