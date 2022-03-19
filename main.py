@@ -60,6 +60,7 @@ def parse(currency, html_text):
 def get_currency(currency):
     r = requests.get('https://www.cbr.ru/currency_base/daily/')
     soup = BeautifulSoup(r.text, 'html.parser')
+    print(soup)
     button = soup.find('button', {'class': 'datepicker-filter_button'})
     return parse(currency, r.text), button.text
 
